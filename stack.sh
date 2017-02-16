@@ -877,6 +877,9 @@ else
     pip_install_gr python-openstackclient
 fi
 
+# Workaround for BUG #1651292 : openstack commands fail in stable/mitaka caused by openstack.version attribute not found
+sed -i "s|DEFAULT_USER_AGENT|   DEFAULT_USER_AGENT = \"0.9.11\"|g" /usr/local/lib/python2.7/dist-packages/openstack/session.py
+
 if [[ $TRACK_DEPENDS = True ]]; then
     $DEST/.venv/bin/pip freeze > $DEST/requires-post-pip
     if ! diff -Nru $DEST/requires-pre-pip $DEST/requires-post-pip > $DEST/requires.diff; then
