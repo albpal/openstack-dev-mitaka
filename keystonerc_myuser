@@ -1,0 +1,9 @@
+unset OS_SERVICE_TOKEN
+export OS_USERNAME=myuser
+export OS_PASSWORD=welcome1
+export OS_AUTH_URL=http://127.0.0.1:5000/v2.0
+#export OS_AUTH_URL=http://10.0.2.15:5000/v2.0
+export PS1='[\u@\h \W(keystone_myuser)]\$ '
+
+export OS_TENANT_NAME=myuser
+export OS_REGION_NAME=RegionOne
